@@ -46,6 +46,10 @@ export default function Tabs({navigation}: HomeNavigation) {
             options={{
                 tabBarLabel: 'Services',
                 tabBarIcon: ({ color }) => <TabBarIcon name="life-ring" color={'#DE4726'} />,
+                headerRight: () => (
+                  <FontAwesome name="plus" color={'#DE4726'} size={25} style={{margin:10}} onPress = {() => navigation.navigate("AddService")} />
+                )
+            
               }}    
         />
     </Tab.Navigator>

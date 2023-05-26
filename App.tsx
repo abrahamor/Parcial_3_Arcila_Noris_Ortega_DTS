@@ -5,6 +5,8 @@ import HomeScreen from './screens/Home/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import AddProduct from './screens/Product/AddProduct';
 import EditProduct from './screens/Product/EditProduct';
+import AddService from './screens/Service/AddService';
+import EditService from './screens/Service/EditService';
 import Tabs from './screens/Tabs';
 
 const Stack = createNativeStackNavigator();
@@ -38,6 +40,16 @@ function App(): JSX.Element {
             name="EditProduct"
             component={EditProduct}
             options={{title: 'Edit User'}}
+          />
+          <Stack.Screen
+            name="AddService"
+            component={AddService}
+            options={{title: 'Add Service'}}
+          />
+          <Stack.Screen
+            name="EditService"
+            component={EditService}
+            options={{title: 'Edit Service'}}
           />
         </Stack.Navigator>
       </NavigationContainer>
