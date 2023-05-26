@@ -8,6 +8,8 @@ import EditProduct from './screens/Product/EditProduct';
 import AddService from './screens/Service/AddService';
 import EditService from './screens/Service/EditService';
 import Tabs from './screens/Tabs';
+import AddSale from './screens/Home/AddSale';
+import Sale from './screens/Home/Sale';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +33,16 @@ function App(): JSX.Element {
             component={HomeScreen}
             options={{title: 'Sales'}}
           />
+          <Stack.Screen
+              name="AddSale"
+              component={AddSale}
+              options={{title: 'Add Sale'}}
+            />
+            <Stack.Screen
+              name="Sale"
+              component={Sale}
+              options={{title: 'Sale'}}
+            />
           <Stack.Screen
             name="AddProduct"
             component={AddProduct}

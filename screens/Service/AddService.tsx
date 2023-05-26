@@ -1,13 +1,11 @@
 
 import { addDoc, collection } from 'firebase/firestore';
-import React,{useContext} from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import { db } from '../../firebase';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 import useForm from '../../hooks/useForm';
-import { ServiceContextData, ServiceContext, initialState } from '../../resources/service';
+import { ServiceContextData, initialState } from '../../resources/service';
   
-//abrahamortega99@gmail.com
 export default function AddService({navigation}:any) {
   const [services, handleChange] = useForm(initialState);
   const {name,sale_price,cost_of_service} = services
@@ -56,7 +54,6 @@ export default function AddService({navigation}:any) {
             <Text style={styles.textLabel}>Sale price</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Sale price'
                 value={sale_price}
                 onChangeText={(value: string) => handleChange('sale_price', value)}
@@ -64,7 +61,6 @@ export default function AddService({navigation}:any) {
             <Text style={styles.textLabel}>Cost of service</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Cost of service'
                 value={cost_of_service}
                 onChangeText={(value: string) => handleChange('cost_of_service', value)}

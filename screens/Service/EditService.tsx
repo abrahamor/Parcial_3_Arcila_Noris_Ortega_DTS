@@ -1,4 +1,4 @@
-import React,{useContext, useEffect} from 'react'
+import React,{useEffect} from 'react'
 import {View,Text,TextInput,StyleSheet, TouchableOpacity} from 'react-native'
 
 
@@ -68,7 +68,6 @@ export default function EditService({navigation,route}:any) {
            <Text style={styles.textLabel}>Sale price</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Sale price'
                 value={sale_price.toString()}
                 onChangeText={(value: string) => handleChange('sale_price', value)}
@@ -76,7 +75,6 @@ export default function EditService({navigation,route}:any) {
             <Text style={styles.textLabel}>Cost of service</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Cost of service'
                 value={cost_of_service.toString()}
                 onChangeText={(value: string) => handleChange('cost_of_service', value)}

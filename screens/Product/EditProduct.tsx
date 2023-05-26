@@ -1,4 +1,4 @@
-import React,{useContext, useEffect} from 'react'
+import React,{useEffect} from 'react'
 import {View,Text,TextInput,StyleSheet, TouchableOpacity} from 'react-native'
 import { doc, getFirestore, updateDoc } from 'firebase/firestore';
 import useForm from '../../hooks/useForm';
@@ -70,7 +70,6 @@ export default function EditProduct({navigation,route}:any) {
            <Text style={styles.textLabel}>Sale price</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Sale price'
                 value={sale_price.toString()}
                 onChangeText={(value: string) => handleChange('sale_price', value)}
@@ -78,7 +77,6 @@ export default function EditProduct({navigation,route}:any) {
             <Text style={styles.textLabel}>Purchase price</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Purchase price'
                 value={purchase_price.toString()}
                 onChangeText={(value: string) => handleChange('purchase_price', value)}
@@ -86,7 +84,6 @@ export default function EditProduct({navigation,route}:any) {
             <Text style={styles.textLabel}>Units in inventory</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Units in inventory'
                 value={units_in_inventory.toString()}
                 onChangeText={(value: string) => handleChange('units_in_inventory', value)}

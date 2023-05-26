@@ -27,7 +27,9 @@ export default function Tabs({navigation}: HomeNavigation) {
         <Tab.Screen name="Sales" component={HomeScreen} options={{
           tabBarLabel: 'Sales',
           tabBarIcon: ({ color }) => <TabBarIcon name="bank" color={'#DE4726'} />,
-          
+          headerRight: () => (
+            <FontAwesome name="plus" color={'#DE4726'} size={25} style={{margin:10}} onPress = {() => navigation.navigate("AddSale")} />
+          )
         }}/>
         <Tab.Screen 
             name="Products" 

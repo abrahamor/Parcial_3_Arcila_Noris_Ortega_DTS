@@ -1,13 +1,11 @@
 
 import { addDoc, collection } from 'firebase/firestore';
-import React,{useContext, useReducer} from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 import { db } from '../../firebase';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 import useForm from '../../hooks/useForm';
-import { ProductContextData, ProductContext, initialState } from '../../resources/product';
+import { ProductContextData, initialState } from '../../resources/product';
   
-//abrahamortega99@gmail.com
 export default function AddProduct({navigation}:any) {
   const [products, handleChange] = useForm(initialState);
   const {name,sale_price,purchase_price,units_in_inventory} = products
@@ -58,7 +56,6 @@ export default function AddProduct({navigation}:any) {
             <Text style={styles.textLabel}>Sale price</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Sale price'
                 value={sale_price}
                 onChangeText={(value: string) => handleChange('sale_price', value)}
@@ -66,7 +63,6 @@ export default function AddProduct({navigation}:any) {
             <Text style={styles.textLabel}>Purchase price</Text>
             <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Purchase price'
                 value={purchase_price}
                 onChangeText={(value: string) => handleChange('purchase_price', value)}
@@ -75,7 +71,6 @@ export default function AddProduct({navigation}:any) {
 
               <TextInput
                 style={styles.input}
-                keyboardType='numeric'
                 placeholder='Units in inventory'
                 value={units_in_inventory}
                 onChangeText={(value: string) => handleChange('units_in_inventory', value)}

@@ -1,6 +1,6 @@
 
-import React,{useEffect, useState,useReducer} from 'react';
-import {Text, StyleSheet, TouchableOpacity, Alert, View} from 'react-native';
+import React,{useEffect, useState} from 'react';
+import {StyleSheet, Alert, View} from 'react-native';
 import {NavigationScreenProp} from 'react-navigation';
 import { collection, getDocs, query, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import {db} from '../../firebase';
