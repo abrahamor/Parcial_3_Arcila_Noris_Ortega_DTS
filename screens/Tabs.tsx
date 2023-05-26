@@ -35,7 +35,9 @@ export default function Tabs({navigation}: HomeNavigation) {
             options={{
                 tabBarLabel: 'Products',
                 tabBarIcon: ({ color }) => <TabBarIcon name="list" color={'#DE4726'} />,
-                
+                headerRight: () => (
+                  <FontAwesome name="plus" color={'#DE4726'} size={25} style={{margin:10}} onPress = {() => navigation.navigate("AddProduct")} />
+                )
               }} 
         />
         <Tab.Screen 
