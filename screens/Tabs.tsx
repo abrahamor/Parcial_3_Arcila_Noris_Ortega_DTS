@@ -20,7 +20,7 @@ function TabBarIcon(props: {
 export default function Tabs({navigation}: HomeNavigation) {
   return (
     <Tab.Navigator
-        initialRouteName="Ventas"
+        initialRouteName="Sales"
         screenOptions={{
         tabBarActiveTintColor: '#2d76cf',
       }}>

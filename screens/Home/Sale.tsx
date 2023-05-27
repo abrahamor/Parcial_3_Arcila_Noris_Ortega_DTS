@@ -17,6 +17,7 @@ export default function Sale({navigation,route}:any) {
   
       if (salesSnapshot.exists()) {
         const salesData = salesSnapshot.data();
+        console.log(salesData.items)
         setSales(salesData.items)
       } else {
         console.log('La venta con el ID proporcionado no existe');

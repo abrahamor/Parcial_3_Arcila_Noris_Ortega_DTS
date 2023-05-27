@@ -8,6 +8,8 @@ import {Picker} from '@react-native-picker/picker';
 import { ServiceForm } from '../../resources/service';
 import { ProductForm } from '../../resources/product';
 import FontAwesome  from '@expo/vector-icons/FontAwesome';
+import { CartProduct } from '../../resources/cart';
+
 
 export default function AddSale({ navigation }:any) {
   const [listProduct, setListProducts] = useState<any[]>([]);
@@ -28,7 +30,7 @@ export default function AddSale({ navigation }:any) {
     id:""
   });
   
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<CartProduct>([]);
   const [quantityProduct, setQuantityProduct] = useState(0);
   const [quantityService, setQuantityService] = useState(0);
 
@@ -248,7 +250,7 @@ export default function AddSale({ navigation }:any) {
       cartItems.forEach((item: any) => {
         const product = listProduct.find((p: any) => p.id === item.productId);
         if (product) {
-          const newInventory = product.units_in_inventory - item.quantity;
+          const newInventory = units_in_inventory - item.quantity;
           updateProductInventory(item.productId, newInventory);
         }
       });

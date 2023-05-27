@@ -19,7 +19,7 @@ export default function HomeScreen({navigation}: HomeNavigation) {
   const isFocused = useIsFocused();
   const q = query(collection(db, 'sales'));
 
-  const getProducts = async () => {
+  const getSales = async () => {
     const querySnapshot = await getDocs(q);
     const list: { id: string; }[] = [];
     querySnapshot.forEach((doc) => {
@@ -30,9 +30,9 @@ export default function HomeScreen({navigation}: HomeNavigation) {
 
   useEffect(() => {
     if (isFocused) {
-      getProducts();
+      getSales();
       const unsubscribe = onSnapshot(q, () => {
-        getProducts();
+        getSales();
       });
 
       return () => {

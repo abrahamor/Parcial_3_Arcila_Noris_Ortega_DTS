@@ -51,7 +51,7 @@ function App(): JSX.Element {
           <Stack.Screen
             name="EditProduct"
             component={EditProduct}
-            options={{title: 'Edit User'}}
+            options={{title: 'Edit Product'}}
           />
           <Stack.Screen
             name="AddService"
